@@ -1327,3 +1327,9 @@ body {
 .footer-col ul li a:hover::after {
   width: 100%;
 }
+
+/* Email icon styling */
+.contact-icon {
+  color: #1d4ed8; /* brand blue */
+  font-size: 22px;
+}
