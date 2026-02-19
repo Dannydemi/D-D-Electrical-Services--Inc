@@ -1560,3 +1560,14 @@ img {
   }
 }
 
+@media (max-width: 768px){
+  .header .nav{
+    display: none !important;
+    width: 100% !important;
+  }
+
+  .header .nav.open{
+    display: block !important;
+  }
+}
+
