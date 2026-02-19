@@ -1571,3 +1571,12 @@ img {
   }
 }
 
+/* Footer Contact Section Spacing (Index + About Only) */
+.footer-contact p {
+    margin-bottom: 12px;
+}
+
+.footer-contact span.highlight {
+    display: inline-block;
+    margin-top: 8px;
+}
