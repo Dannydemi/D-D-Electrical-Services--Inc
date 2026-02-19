@@ -1,14 +1,6 @@
-const menuToggle = document.getElementById("menu-toggle");
-const navMenu = document.getElementById("nav-menu");
-
-menuToggle.addEventListener("click", () => {
-    navMenu.classList.toggle("active");
-});
-
-// ================= MOBILE MENU TOGGLE =================
 document.addEventListener("DOMContentLoaded", () => {
   const toggle = document.getElementById("menu-toggle");
-  const nav = document.querySelector(".header .nav");
+  const nav = document.querySelector(".header .nav"); // this is what your CSS hides/shows
 
   if (!toggle || !nav) return;
 
