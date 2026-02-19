@@ -1333,3 +1333,62 @@ body {
   color: #1d4ed8; /* brand blue */
   font-size: 22px;
 }
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Keep header content from forcing extra width */
+.header, .nav-container, .container {
+  max-width: 100%;
+}
+
+.nav ul {
+  flex-wrap: wrap;              /* allows wrapping instead of overflow */
+  justify-content: flex-end;
+  gap: 14px;                    /* smaller gaps for mobile */
+}
+
+.nav a {
+  font-size: 14px;              /* reduce nav text size on mobile */
+}
+
+/* Tighten header spacing on small screens */
+@media (max-width: 768px) {
+  .header {
+    padding: 8px 0;
+  }
+
+  .nav-container {
+    align-items: center;
+    gap: 10px;
+  }
+
+  .logo-img {
+    height: 40px;               /* reduce logo height on mobile */
+  }
+}
+
+@media (max-width: 768px) {
+  .hero, .hero-container, .hero-content {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* If your hero image is inside something like .hero-image or .hero-img */
+  .hero img,
+  .hero-image img,
+  .hero-img img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
