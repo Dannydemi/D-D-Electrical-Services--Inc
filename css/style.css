@@ -1474,3 +1474,89 @@ img {
   }
 }
 
+/* ================= MOBILE HEADER FIX (FOR YOUR EXACT HTML) ================= */
+@media (max-width: 768px) {
+
+  /* Header container: 2-row layout */
+  .header .nav-container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  /* Logo block */
+  .header .logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1 1 auto;
+    min-width: 180px;
+  }
+
+  .header .logo-img{
+    height: 38px;      /* smaller on mobile */
+    width: auto;
+  }
+
+  .header .logo-text span{
+    font-size: 12px;
+    line-height: 1.2;
+    display: block;
+  }
+
+  /* Call button ONLY in header (not hero) */
+  .header > .nav-container > .call-btn{
+    padding: 10px 12px;
+    font-size: 14px;
+    border-radius: 12px;
+    line-height: 1.1;
+    width: auto;
+    white-space: normal;
+  }
+
+  /* Hamburger visible on mobile */
+  .header .menu-toggle{
+    display: block;
+    font-size: 26px;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  /* Hide nav by default on mobile */
+  .header .nav{
+    width: 100%;
+    order: 3;
+    display: none;           /* hidden until toggled */
+  }
+
+  /* When opened, show nav */
+  .header .nav.open{
+    display: block;
+  }
+
+  /* Nav list becomes a dropdown stack */
+  .header #nav-menu{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px 0 0;
+    margin: 0;
+  }
+
+  .header #nav-menu li{
+    list-style: none;
+  }
+
+  .header #nav-menu a{
+    display: block;
+    padding: 10px 12px;
+    border-radius: 10px;
+    font-size: 14px;
+    text-align: center;
+  }
+}
+
