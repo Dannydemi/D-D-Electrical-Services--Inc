@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const toggle = document.getElementById("menu-toggle");
-  const nav = document.querySelector(".header .nav"); // this is what your CSS hides/shows
+  const nav = document.querySelector(".header .nav"); // this is what your CSS is using
 
   if (!toggle || !nav) return;
 
