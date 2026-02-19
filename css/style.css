@@ -1393,74 +1393,84 @@ img {
   }
 }
 
-/* ================= MOBILE HEADER FIX ================= */
+/* ============ MOBILE HEADER (STRUCTURE-BASED FIX) ============ */
 @media (max-width: 768px) {
 
-  /* Make header stack nicely */
-  .nav-container {
-    flex-direction: column;
+  /* Stop any sideways overflow from header */
+  header, .header {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* Make the header layout wrap instead of overflowing */
+  header .nav-container,
+  .header .nav-container {
+    display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     gap: 10px;
   }
 
-  /* Center logo row */
-  .logo {
-    justify-content: center;
+  /* Row 1: logo + call button */
+  header .logo,
+  .header .logo {
+    flex: 0 0 auto;
   }
 
-  /* Make the nav links wrap and stay centered */
-  .nav ul {
-    justify-content: center;
+  /* Shrink ANY phone button/link in the header (tel:) */
+  header a[href^="tel:"],
+  .header a[href^="tel:"] {
+    flex: 0 0 auto;
+    padding: 10px 14px !important;
+    font-size: 14px !important;
+    border-radius: 12px !important;
+    line-height: 1.1 !important;
+    width: auto !important;
+    max-width: 92vw !important;
+    white-space: normal !important;
+  }
+
+  /* Force badges + nav onto full-width rows */
+  header .nav,
+  .header .nav,
+  header .licensed,
+  .header .licensed,
+  header .trust,
+  .header .trust {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+
+  /* Make ALL header lists compact and wrap nicely (fixes Licensed/Bonded/Insured list too) */
+  header ul,
+  .header ul {
+    display: flex;
     flex-wrap: wrap;
-    gap: 12px 18px; /* row gap / column gap */
-    padding: 0;
+    justify-content: center;
+    gap: 8px 16px;
     margin: 0;
+    padding: 0;
   }
 
-  /* Reduce nav font slightly */
-  .nav a {
+  header li,
+  .header li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Make nav links slightly smaller for mobile */
+  header .nav a,
+  .header .nav a {
     font-size: 14px;
   }
 
-  /* Shrink the call button (covers most "Call Now" buttons) */
-  .header-btn,
-  .cta-btn,
-  .call-btn,
-  .btn-call,
-  .phone-btn,
-  .header .btn,
-  .nav-container .btn {
-    padding: 10px 14px !important;
-    font-size: 14px !important;
-    border-radius: 10px !important;
-    line-height: 1.15 !important;
-    text-align: center;
-    width: auto !important;
-    max-width: 92vw; /* prevent overflow */
-    white-space: normal; /* allow wrapping */
-  }
-
-  /* If your "Licensed/Bonded/Insured" is a list, make it compact */
-  .licensed,
-  .badge-list,
-  .header-badges,
-  .trust-badges {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: center;
-  }
-
-  .licensed li,
-  .badge-list li,
-  .header-badges li,
-  .trust-badges li {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    font-size: 13px;
-    font-weight: 600;
+  /* Logo image safety */
+  header img,
+  .header img {
+    max-width: 100%;
+    height: auto;
   }
 }
+
